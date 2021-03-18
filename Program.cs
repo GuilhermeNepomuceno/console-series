@@ -7,7 +7,7 @@ namespace ConsoleSeries
         static void Main(string[] args)
         {
             // Console.WriteLine("Hello World!");
-            Series newSerie = new Series();
+            // Series newSerie = new Series();
             
         }
     }

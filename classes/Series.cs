@@ -21,7 +21,8 @@ namespace ConsoleSeries
         public override string ToString()
         {
             string serie = $"Título: {this.Title} / Gênero: {this.Genre} / "
-            + $"Ano: {this.Year} \nDescrição: {this.Description}";
+            + $"Ano: {this.Year} \nDescrição: {this.Description}"
+            + $"\nDeletada: {this.Deleted}";
 
             return serie; 
         }

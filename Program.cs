@@ -36,7 +36,8 @@ namespace ConsoleSeries
                         DeleteSeries();
                     break;
                     case "5":
-
+                        Console.WriteLine("\n\t\t\t\t -#- Série -#-");
+                        ViewSerie();
                     break;
                     default:
                         option = "X";
@@ -45,9 +46,24 @@ namespace ConsoleSeries
             } while (option != "X");
         }
 
+        private static void ViewSerie()
+        {
+            ListSeries();
+            Console.Write("\nQual série deseja visualizar? ");
+            int serieIndex = int.Parse(Console.ReadLine()) - 1;
+
+            Console.WriteLine("\nInformações:\n");
+            Console.WriteLine(repository.GetbyID(serieIndex));
+            
+        }
+
         private static void DeleteSeries()
         {
-            
+            ListSeries();
+            Console.Write("\nQual série deseja deletar? ");
+            int serieIndex = int.Parse(Console.ReadLine()) - 1;
+            repository.Delete(serieIndex);
+            Console.WriteLine("Série deletada.");
         }
 
         private static void UpdateSerie()

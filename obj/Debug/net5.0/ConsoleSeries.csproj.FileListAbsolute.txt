@@ -1,0 +1,16 @@
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.exe
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.deps.json
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.runtimeconfig.json
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.runtimeconfig.dev.json
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.dll
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ref\ConsoleSeries.dll
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\bin\Debug\net5.0\ConsoleSeries.pdb
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.dll
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ref\ConsoleSeries.dll
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.pdb
+C:\Users\Guilherme\Desktop\Workspace  C#\ConsoleSeries\obj\Debug\net5.0\ConsoleSeries.genruntimeconfig.cache

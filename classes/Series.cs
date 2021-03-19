@@ -25,11 +25,11 @@ namespace ConsoleSeries
             return serie; 
         }
 
-        public string getTitle(){
+        public string GetTitle(){
             return this.Title;
         }
 
-        public int getId(){
+        public int GetId(){
             return this.id;
         }
 

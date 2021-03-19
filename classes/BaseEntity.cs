@@ -2,6 +2,6 @@ namespace ConsoleSeries
 {
     public abstract class BaseEntity
     {
-        public int id { get; protected set; }
+        public int Id { get; protected set; }
     }
 }

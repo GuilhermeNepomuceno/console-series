@@ -20,16 +20,20 @@ namespace ConsoleSeries
                 switch (option)
                 {
                     case "1":
+                        Console.WriteLine("\n\t\t\t\t-#- Lista de Séries -#-");
                         ListSeries();
                     break;
                     case "2":
-                        InsertMethod();
+                        Console.WriteLine("\n\t\t\t\t -#- Cadastro de Série -#-");
+                        InsertSerie();
                     break;
                     case "3":
-
+                        Console.WriteLine("\n\t\t\t\t -#- Atualizar informações -#-");
+                        UpdateSerie();
                     break;
                     case "4":
-
+                        Console.WriteLine("\n\t\t\t\t -#- Remover série -#-");
+                        DeleteSeries();
                     break;
                     case "5":
 
@@ -41,17 +45,23 @@ namespace ConsoleSeries
             } while (option != "X");
         }
 
-        private static void InsertMethod()
+        private static void DeleteSeries()
         {
-            Console.WriteLine("\n\t\t\t\t -#- Cadastro de Série -#-");
-            Console.WriteLine("\n\t\tGêneros");
-            foreach (var genre in Enum.GetValues(typeof(Genre)))
-            {
-                Console.WriteLine("# {0} - {1}", (int)genre, (Genre)genre);
-            }
             
+        }
+
+        private static void UpdateSerie()
+        {
+            ListSeries();
             try
             {
+                Console.Write("\nEscolha a série a ser atualizada: ");
+                int serieIndex = int.Parse(Console.ReadLine()) - 1;
+                Console.WriteLine("\n\t\tGêneros");
+                foreach (var genre in Enum.GetValues(typeof(Genre)))
+                {
+                    Console.WriteLine("# {0} - {1}", (int)genre, (Genre)genre);
+                }
                 Console.Write("\nDigite o gênero da série: ");
                 byte serieGenre = byte.Parse(Console.ReadLine());
                 Console.Write("Digite o título da série: ");
@@ -63,7 +73,43 @@ namespace ConsoleSeries
                 Console.WriteLine("Digite a descrição da série: ");
                 string description = Console.ReadLine();
 
-                Series newSerie = new Series((Genre)serieGenre, serieTitle, description, launchYear);
+                Series updatedSerie = new Series(serieIndex, (Genre)serieGenre, serieTitle, description, launchYear);
+                repository.Update(serieIndex, updatedSerie);    
+            }catch(FormatException)
+            {
+                throw new FormatException("Gênero não existe.");
+            }catch(Exception e)
+            {
+                // throw new ArgumentNullException("Necessário informar o gênero da série");
+                Console.WriteLine(e.Message);
+            }
+
+            
+        }
+
+        private static void InsertSerie()
+        {
+            
+            Console.WriteLine("\n\t\tGêneros");
+            foreach (var genre in Enum.GetValues(typeof(Genre)))
+            {
+                Console.WriteLine("# {0} - {1}", (int)genre, (Genre)genre);
+            }
+            
+            try
+            {
+                Console.Write("\nDigite o gênero da série: ");
+                int serieGenre = int.Parse(Console.ReadLine());
+                Console.Write("Digite o título da série: ");
+                string serieTitle = Console.ReadLine();
+
+                Console.Write("Digite o ano de início: ");
+                int launchYear = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Digite a descrição da série: ");
+                string description = Console.ReadLine();
+
+                Series newSerie = new Series(1 + repository.NextId(), (Genre)serieGenre, serieTitle, description, launchYear);
                 repository.Insert(newSerie);    
             }catch(FormatException)
             {
@@ -94,10 +140,10 @@ namespace ConsoleSeries
 
         public static void ListSeries()
         {
-            Console.WriteLine("\n\t\t\t\t-#- Lista de Séries -#-");
             if(repository.List().Count > 0)
             {
                 List<Series> repositoryList = repository.List();
+                Console.WriteLine();
                 foreach (var serie in repositoryList)
                 {
                     Console.WriteLine("#ID {0}: - {1}", serie.GetId(), serie.GetTitle());

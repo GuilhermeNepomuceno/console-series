@@ -8,8 +8,9 @@ namespace ConsoleSeries
         public int Year { get; set; }
         private bool Deleted { get; set; }
     
-        public Series(Genre genre, string title, string description, int year)
+        public Series(int id, Genre genre, string title, string description, int year)
         {
+            this.Id = id;
             this.Genre = genre;
             this.Title = title;
             this.Description = description;
@@ -30,7 +31,7 @@ namespace ConsoleSeries
         }
 
         public int GetId(){
-            return this.id;
+            return this.Id;
         }
 
         public void Delete(){
